@@ -32,7 +32,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  footer: ^0.0.4
   elastic_drawer: ^2.0.2
 
   flutter_bloc: 8.1.3
