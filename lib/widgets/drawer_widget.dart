@@ -7,19 +7,26 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topRight,
+      alignment: Alignment.center,
       children: [
-        IconButton(
-          onPressed: () {
-            ElasticDrawerKey.drawer.currentState?.closeElasticDrawer(context);
-          },
-          icon: const Icon(
-            Icons.close,
-            color: Colors.white,
+        Container(
+          alignment: Alignment.centerLeft,
+          child: IconButton(
+            onPressed: () {
+              ElasticDrawerKey.drawer.currentState?.closeElasticDrawer(context);
+            },
+            icon: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.arrow_forward_ios_outlined,
+                color: Colors.white,
+                size: 40,
+              ),
+            ),
           ),
         ),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(

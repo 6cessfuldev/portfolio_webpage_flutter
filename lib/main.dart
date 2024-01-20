@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/pages/home_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio_web/screens/home_screen.dart';
+
+import 'blocs/scroll_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +14,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    return BlocProvider(
+      create: (context) => ScrollBloc(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeScreen(),
+      ),
     );
   }
 }
